@@ -1,25 +1,66 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from './logo.svg'
+import './App.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import {
+  Container,
+  Row,
+  Col,
+  Button,
+  Alert,
+  Breadcrumb,
+  Card,
+  Form,
+} from 'react-bootstrap'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className='App'>
+      <header className='App-header'>
+        <Container>
+          <Form>
+            <Row>
+              <Col md>
+                <Form.Group controlId='forEmail'>
+                  <Form.Label>Email Address</Form.Label>
+                  <Form.Control type='email' placeholder='example@email.com' />
+                  <Form.Text className='text-muted'>
+                    We will never share your password, Trust us!!!
+                  </Form.Text>
+                </Form.Group>
+              </Col>
+              <Col md>
+                <Form.Group controlId='forPassword'>
+                  <Form.Label>Password</Form.Label>
+                  <Form.Control
+                    type='password'
+                    placeholder='Enter a Strong password'
+                  />
+                </Form.Group>
+              </Col>
+            </Row>
+            <Button variant='secondary' type='submit' className='mb-3'>
+              Login
+            </Button>
+          </Form>
+          <Card className='mb-3' style={{ color: '#000' }}>
+            <Card.Img src='https://picsum.photos/400/300' />
+            <Card.Body>
+              <Card.Title>Card Example</Card.Title>
+              <Card.Text>This is React Bootstrap Card example</Card.Text>
+              <Button variant='primary'>Read More</Button>
+            </Card.Body>
+          </Card>
+          <Breadcrumb>
+            <Breadcrumb.Item>Test 1</Breadcrumb.Item>
+            <Breadcrumb.Item>Test 2</Breadcrumb.Item>
+            <Breadcrumb.Item active>Test 3</Breadcrumb.Item>
+          </Breadcrumb>
+          <Alert variant='success'>This is a Button</Alert>
+          <Button>Test Button</Button>
+        </Container>
       </header>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
